@@ -384,8 +384,7 @@ function template_info_center()
 		echo '
 			<div class="title_barIC">
 				<h4 class="titlebg">
-					<a href="', $scripturl, '?action=stats"><i class="fas fa-chart-pie"></i></a>
-					', $txt['forum_stats'], '
+					<a href="', $scripturl, '?action=stats"><i class="fas fa-chart-pie"></i> ', $txt['forum_stats'], '</a>
 				</h4>
 			</div>
 			<p class="windowbg">
@@ -400,8 +399,7 @@ function template_info_center()
 	echo '
 			<div class="title_barIC">
 				<h4 class="titlebg">
-					', $context['show_who'] ? '<a href="' . $scripturl . '?action=who' . '">' : '', '<i class="fas fa-users"></i>', $context['show_who'] ? '</a>' : '', '
-					', $txt['online_users'], '
+					', $context['show_who'] ? '<a href="' . $scripturl . '?action=who' . '">' : '', '<i class="fas fa-users"></i> ', $txt['online_users'], ' ', $context['show_who'] ? '</a>' : '', '
 				</h4>
 			</div>
 			<p class="inline stats windowbg">

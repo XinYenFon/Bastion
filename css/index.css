@@ -31,12 +31,13 @@ table
 }
 
 /* Set a fontsize that will look the same in all browsers. */
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 body
 {
 	color: #121212;
 	background-image: url(../images/background-shadowlands.jpg);
 	background-color: transparent;
-	font: small Verdana, sans-serif;
+	font-family: 'Karla', sans-serif;
 	margin: 0 auto;
 }
 
@@ -379,6 +380,7 @@ code.bbc_code
 .bbc_list
 {
 	text-align: left;
+	line-height: 1.75em;
 }
 .bbc_tt
 {
@@ -434,12 +436,10 @@ tr.catbg th a:link, tr.catbg th a:visited, tr.catbg2 td a:link, tr.catbg2 td a:v
 /* Alternating backgrounds for posts, and several other sections of the forum. */
 .windowbg:nth-child(odd), #preview_body, .lockedbg
 {
-	color: #121212;
 	background-color: #00000055;
 }
 .windowbg:nth-child(even), .windowbg2, .windowbg3, .lockedbg2
 {
-	color: #121212;
 	background-color: #00000033;
 }
 
@@ -874,8 +874,8 @@ table.table_grid thead tr.catbg th
 	padding: 7px 0 0 0;
 }
 .dropmenu li ul li {
-	background: #333;
-	border: 1px solid #555;
+	background: rgba(0, 0, 0, 0.55);
+	border: 1px solid #55555585;
 }
 .dropmenu li ul a, .dropmenu li ul a:hover {
 	background: none;
@@ -1544,7 +1544,6 @@ p#whoisviewing
 }
 .postarea
 {
-	color: #D1D1D1;
 	display: inline-block;
 	flex: 1 90%;
 	vertical-align: top;
@@ -3215,7 +3214,7 @@ a.subject:hover, .member_link > a:hover, .catbg a:hover,
 .title_barIC, .title_bar , .description, .plainbox, .information {
 	border-top: 1px solid #5F7CA210;
 	border-bottom: 1px solid #5F7CA210;
-	background-color: #5F7CA2;
+	background-color: #5F7CA299;
 	padding: 8px;
 }
 h3.titlebg, h4.titlebg {
@@ -3328,4 +3327,9 @@ h3.titlebg, h4.titlebg {
 }
 .abg {
 	background-image: url(../images/abg.jpg);
+}
+.new_button {
+	background: orange;
+	padding: 0 3px;
+	border-radius: 3px;
 }
