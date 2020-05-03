@@ -22,7 +22,10 @@ function template_login()
 		<div class="tborder login">
 			<div class="cat_bar">
 				<h3 class="catbg">
-					<img src="', $settings['images_url'], '/icons/login_sm.gif" alt="" class="icon"> ', $txt['login'], '
+					<span>
+						<i class="fas fa-sign-in-alt"></i>
+						', $txt['login'], '
+					</span>
 				</h3>
 			</div>
 			<div class="roundframe"><br class="clear">';
@@ -105,7 +108,10 @@ function template_kick_guest()
 	echo '
 			<div class="cat_bar">
 				<h3 class="catbg">
-					<img src="', $settings['images_url'], '/icons/login_sm.gif" alt="" class="icon"> ', $txt['login'], '
+					<span>
+						<i class="fas fa-sign-in-alt"></i>
+						', $txt['login'], '
+					</span>
 				</h3>
 			</div>
 			<div class="roundframe">
@@ -197,7 +203,10 @@ function template_admin_login()
 	<div class="tborder login" id="admin_login">
 		<div class="cat_bar">
 			<h3 class="catbg">
-				<img src="', $settings['images_url'], '/icons/login_sm.gif" alt="" class="icon"> ', $txt['login'], '
+				<span>
+					<i class="fas fa-sign-in-alt"></i>
+					', $txt['login'], '
+				</span>
 			</h3>
 		</div>
 		<div class="roundframe centertext">';

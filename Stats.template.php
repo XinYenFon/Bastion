@@ -21,7 +21,7 @@ function template_main()
 		</div>
 		<div class="title_bar">
 			<h4 class="titlebg">
-				<i class="fas fa-chart-pie fa-lg"></i> ', $txt['general_stats'], '
+				<i class="fas fa-chart-pie"></i> ', $txt['general_stats'], '
 			</h4>
 		</div>
 		<div class="flow_hidden">
@@ -90,7 +90,7 @@ function template_main()
 			<div id="top_posters">
 				<div class="title_bar">
 					<h4 class="titlebg">
-						<i class="fas fa-trophy fa-lg"></i> ', $txt['top_posters'], '
+						<i class="fas fa-trophy"></i> ', $txt['top_posters'], '
 					</h4>
 				</div>
 					<div class="windowbg">
@@ -125,7 +125,7 @@ function template_main()
 			<div id="top_boards">
 				<div class="title_bar">
 					<h4 class="titlebg">
-						<i class="fas fa-chart-pie fa-lg"></i> ', $txt['top_boards'], '
+						<i class="fas fa-chart-pie"></i> ', $txt['top_boards'], '
 					</h4>
 				</div>
 					<div class="windowbg">
@@ -161,7 +161,7 @@ function template_main()
 			<div id="top_topics_replies">
 				<div class="title_bar">
 					<h4 class="titlebg">
-						<i class="fas fa-clipboard fa-lg"></i> ', $txt['top_topics_replies'], '
+						<i class="fas fa-clipboard"></i> ', $txt['top_topics_replies'], '
 					</h4>
 				</div>
 					<div class="windowbg">
@@ -195,7 +195,7 @@ function template_main()
 			<div id="top_topics_views">
 				<div class="title_bar">
 					<h4 class="titlebg">
-						<i class="fas fa-chart-pie fa-lg"></i> ', $txt['top_topics_views'], '
+						<i class="fas fa-chart-pie"></i> ', $txt['top_topics_views'], '
 					</h4>
 				</div>
 				<div class="windowbg">
@@ -230,7 +230,7 @@ function template_main()
 			<div id="top_topics_starter">
 				<div class="title_bar">
 					<h4 class="titlebg">
-						<i class="fas fa-clipboard fa-lg"></i> ', $txt['top_starters'], '
+						<i class="fas fa-clipboard"></i> ', $txt['top_starters'], '
 					</h4>
 				</div>
 				<div class="windowbg">
@@ -265,7 +265,7 @@ function template_main()
 			<div id="most_online">
 				<div class="title_bar">
 					<h4 class="titlebg">
-						<i class="fas fa-chart-pie fa-lg"></i> ', $txt['most_time_online'], '
+						<i class="fas fa-chart-pie"></i> ', $txt['most_time_online'], '
 					</h4>
 				</div>
 				<div class="windowbg">
@@ -302,7 +302,7 @@ function template_main()
 		<div class="flow_hidden">
 			<div class="cat_bar">
 				<h3 class="catbg">
-					<i class="fas fa-history fa-lg"></i> ', $txt['forum_history'], '
+					<i class="fas fa-history"></i> ', $txt['forum_history'], '
 				</h3>
 			</div>';
 

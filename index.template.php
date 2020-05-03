@@ -317,7 +317,8 @@ function template_html_below()
 {
 	global $context, $settings, $options, $scripturl, $txt, $modSettings;
 
-	echo '
+	template_evil_social_share();
+echo '
 </body></html>';
 }
 
@@ -476,5 +477,18 @@ function template_button_strip($button_strip, $direction = 'top', $strip_options
 			</ul>
 		</div>';
 }
-
+function template_evil_social_share () {
+	// We have to be in boardIndex, messageIndex or Topic... otherwise no!
+	global $context, $board, $topic;
+	if (empty($_REQUEST['action'])) {
+		// Output what we have...
+		echo '
+		<div id="social_evil_buttons">
+			<a href="https://www.facebook.com/sharer.php?u='. $context['canonical_url']. '" class="facebook"><i class="fab fa-facebook fa-2x fa-fw"></i></a>
+			<a href="https://twitter.com/share?text='. $context['page_title_html_safe']. '&url='. $context['canonical_url']. '" class="twitter"><i class="fab fa-twitter fa-2x fa-fw"></i></a>
+			<a href="https://www.reddit.com/submit?url='. $context['canonical_url']. '" class="reddit"><i class="fab fa-reddit-alien fa-2x fa-fw"></i></a>
+			<a href="mailto:?'. $context['page_title_html_safe']. '&body='. $context['canonical_url'].'" class="mailto"><i class="fas fa-envelope fa-2x fa-fw"></i></a>
+		</div>';
+	}
+}
 ?>

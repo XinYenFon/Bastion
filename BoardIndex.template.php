@@ -102,19 +102,26 @@ function template_main()
 				<tr>
 					<td colspan="4">
 						<div class="cat_bar ',$category['is_collapsed'] ? 'collapsed' : '','">
-							<h3 class="catbg">';
+							<h3 class="catbg">
+								', $category['link'], '';
 
+		if ($category['can_collapse'] || (!$context['user']['is_guest'] && !empty($category['show_unread']))) {
+			echo '
+							<span class="righttext">';
+		}
+		if (!$context['user']['is_guest'] && !empty($category['show_unread']))
+			echo '
+								<a class="unreadlink" href="', $scripturl, '?action=unread;c=', $category['id'], '">', $txt['view_unread_category'], '</a>';
 		// If this category even can collapse, show a link to collapse it.
 		if ($category['can_collapse'])
 			echo '
 								<a class="collapse" href="', $category['collapse_href'], '"><i class="fas ', $category['is_collapsed'] ? 'toggle-up' : 'toggle-down','"></i></a>';
 
-		if (!$context['user']['is_guest'] && !empty($category['show_unread']))
+		if ($category['can_collapse'] || (!$context['user']['is_guest'] && !empty($category['show_unread']))) {
 			echo '
-								<a class="unreadlink" href="', $scripturl, '?action=unread;c=', $category['id'], '">', $txt['view_unread_category'], '</a>';
-
+							</span>';
+		}
 		echo '
-								', $category['link'], '
 							</h3>
 						</div>
 					</td>
@@ -248,9 +255,9 @@ function template_main()
 
 		echo '
 		<ul class="reset">
-			<li class="floatleft"><i class="fa fa-lg fa-envelope"></i> ', $txt['new_posts'], '</li>
-			<li class="floatleft"><i class="fa fa-lg fa-envelope-open"></i> ', $txt['old_posts'], '</li>
-			<li class="floatleft"><i class="fa fa-lg fa-share"></i> ', $txt['redirect_board'], '</li>
+			<li class="floatleft"><i class="fas fa-envelope"></i> ', $txt['new_posts'], '</li>
+			<li class="floatleft"><i class="fas fa-envelope-open"></i> ', $txt['old_posts'], '</li>
+			<li class="floatleft"><i class="fas fa-share"></i> ', $txt['redirect_board'], '</li>
 		</ul>
 	</div>';
 
@@ -263,8 +270,8 @@ function template_main()
 		echo '
 	<div id="posting_icons" class="flow_hidden">
 		<ul class="reset">
-			<li class="floatleft"><i class="fa fa-lg fa-envelope-open"></i> ', $txt['old_posts'], '</li>
-			<li class="floatleft"><i class="fa fa-lg fa-share"></i> ', $txt['redirect_board'], '</li>
+			<li class="floatleft"><i class="fas fa-envelope-open"></i> ', $txt['old_posts'], '</li>
+			<li class="floatleft"><i class="fas fa-share"></i> ', $txt['redirect_board'], '</li>
 		</ul>
 	</div>';
 	}
@@ -283,8 +290,8 @@ function template_info_center()
 	echo '
 		<div class="cat_bar">
 			<h3 class="catbg">
-				<a onClick="toggleItem()" class="collapse"><i class="icon fa fa-lg" id="upshrink_ic" title="', $txt['upshrink_description'], '"></i></a>
-				', sprintf($txt['info_center_title'], $context['forum_name_html_safe']), '
+				<span>', sprintf($txt['info_center_title'], $context['forum_name_html_safe']), '</span>
+				<a onClick="toggleItem()" class="collapse"><i class="icon fa" id="upshrink_ic" title="', $txt['upshrink_description'], '"></i></a>
 			</h3>
 		</div>
 		<div id="upshrinkHeaderIC"', empty($options['collapse_header_ic']) ? '' : ' style="display: none;"', '>';

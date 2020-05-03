@@ -69,7 +69,6 @@ function template_main()
 				</div>';
 
 		echo '
-				<span class="botslice clear"><span></span></span>
 			</div>';
 
 	}

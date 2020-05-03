@@ -541,14 +541,16 @@ function template_browse()
 	<div id="admincenter">
 		<div class="cat_bar">
 			<h3 class="catbg">
-				<a href="', $scripturl, '?action=helpadmin;help=latest_packages" onclick="return reqWin(this.href);" class="help"><i class="fas fa-question-circle"></i></a> ', $txt['packages_latest'], '
+				<span>
+					<a href="', $scripturl, '?action=helpadmin;help=latest_packages" onclick="return reqWin(this.href);" class="help"><i class="fas fa-question-circle"></i></a>
+					', $txt['packages_latest'], '
+				</span>
 			</h3>
 		</div>
 		<div class="windowbg">
 			<div class="content">
 				<div id="packagesLatest">', $txt['packages_latest_fetch'], '</div>
 			</div>
-			<span class="botslice clear_right"><span></span></span>
 		</div>
 
 		<script type="text/javascript"><!-- // --><![CDATA[

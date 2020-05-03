@@ -53,7 +53,10 @@ function template_summary()
 <div id="profileview" class="flow_auto">
 	<div class="cat_bar">
 		<h3 class="catbg">
-			<img src="', $settings['images_url'], '/icons/profile_sm.gif" alt="" class="icon">', $txt['summary'], '
+			<span>
+				<i class="fas fa-user"></i>
+				', $txt['summary'], '
+			</span>
 		</h3>
 	</div>
 	<div id="basicinfo">
@@ -351,7 +354,7 @@ function template_showPosts()
 		{
 			echo '
 		<div class="topic">
-			<div class="windowbg core_posts">
+			<div class="windowbg core_posts nopad">
 				<div class="content">
 					<div class="counter">', $post['counter'], '</div>
 					<div class="topic_details">
@@ -373,7 +376,6 @@ function template_showPosts()
 
 			if ($post['can_reply'] || $post['can_mark_notify'] || $post['can_delete'])
 				echo '
-				<div class="floatright">
 					<ul class="reset smalltext quickbuttons">';
 
 			// If they *can* reply?
@@ -398,11 +400,9 @@ function template_showPosts()
 
 			if ($post['can_reply'] || $post['can_mark_notify'] || $post['can_delete'])
 				echo '
-					</ul>
-				</div>';
+					</ul>';
 
 			echo '
-				<br class="clear">
 			</div>
 		</div>';
 		}
@@ -562,7 +562,10 @@ function template_editIgnoreList()
 	echo '
 		<div class="title_bar">
 			<h3 class="titlebg">
-				<img src="', $settings['images_url'], '/icons/profile_sm.gif" alt="" class="icon">', $txt['editIgnoreList'], '
+				<span>
+					<i class="fas fa-user"></i>
+					', $txt['editIgnoreList'], '
+				</span>
 			</h3>
 		</div>
 		<table border="0" width="100%" cellspacing="1" cellpadding="4" class="table_grid" align="center">
@@ -777,7 +780,10 @@ function template_showPermissions()
 	echo '
 		<div class="cat_bar">
 			<h3 class="catbg">
-				<img src="', $settings['images_url'], '/icons/profile_sm.gif" alt="" class="icon">', $txt['showPermissions'], '
+				<span>
+					<i class="fas fa-user"></i>
+					', $txt['showPermissions'], '
+				</span>
 			</h3>
 		</div>';
 
@@ -936,8 +942,10 @@ function template_statPanel()
 		<div id="generalstats">
 			<div class="cat_bar">
 				<h3 class="catbg">
-					<img src="', $settings['images_url'], '/stats_info.gif" alt="" class="icon">
-					', $txt['statPanel_generalStats'], ' - ', $context['member']['name'], '
+					<span>
+						<i class="fas fa-chart-pie"></i>
+						', $txt['statPanel_generalStats'], ' - ', $context['member']['name'], '
+					</span>
 				</h3>
 			</div>
 			<div class="windowbg">
@@ -963,7 +971,10 @@ function template_statPanel()
 		<div id="activitytime" class="flow_hidden">
 			<div class="cat_bar">
 				<h3 class="catbg">
-					<img src="', $settings['images_url'], '/stats_history.gif" alt="" class="icon">', $txt['statPanel_activityTime'], '
+					<span>
+						<i class="fas fa-history"></i>
+						', $txt['statPanel_activityTime'], '
+					</span>
 				</h3>
 			</div>
 			<div class="windowbg">
@@ -1010,7 +1021,10 @@ function template_statPanel()
 			<div id="popularposts">
 				<div class="cat_bar">
 					<h3 class="catbg">
-						<img src="', $settings['images_url'], '/stats_replies.gif" alt="" class="icon">', $txt['statPanel_topBoards'], '
+						<span>
+							<i class="fas fa-clipboard"></i>
+							', $txt['statPanel_topBoards'], '
+						</span>
 					</h3>
 				</div>
 				<div class="windowbg">
@@ -1049,7 +1063,10 @@ function template_statPanel()
 			<div id="popularactivity">
 				<div class="cat_bar">
 					<h3 class="catbg">
-						<img src="', $settings['images_url'], '/stats_replies.gif" alt="" class="icon">', $txt['statPanel_topBoardsActivity'], '
+						<span>
+							<i class="fas fa-clipboard"></i>
+							', $txt['statPanel_topBoardsActivity'], '
+						</span>
 					</h3>
 				</div>
 				<div class="windowbg">
@@ -1100,17 +1117,19 @@ function template_edit_options()
 		<form action="', (!empty($context['profile_custom_submit_url']) ? $context['profile_custom_submit_url'] : $scripturl . '?action=profile;area=' . $context['menu_item_selected'] . ';u=' . $context['id_member'] . ';save'), '" method="post" accept-charset="', $context['character_set'], '" name="creator" id="creator" enctype="multipart/form-data" onsubmit="return checkProfileSubmit();">
 			<div class="cat_bar">
 				<h3 class="catbg">
-					<img src="', $settings['images_url'], '/icons/profile_sm.gif" alt="" class="icon">';
+					<span>
+						<i class="fas fa-user"></i>';
 
 		// Don't say "Profile" if this isn't the profile...
 		if (!empty($context['profile_header_text']))
 			echo '
-					', $context['profile_header_text'];
+						', $context['profile_header_text'];
 		else
 			echo '
-					', $txt['profile'];
+						', $txt['profile'];
 
 		echo '
+					</span>
 				</h3>
 			</div>';
 
@@ -1553,7 +1572,10 @@ function template_notification()
 	echo '
 			<div class="cat_bar">
 				<h3 class="catbg">
-					<img src="', $settings['images_url'], '/icons/profile_sm.gif" alt="" class="icon">', $txt['profile'], '
+					<span>
+						<i class="fas fa-user"></i>
+						', $txt['profile'], '
+					</span>
 				</h3>
 			</div>
 			<p class="windowbg description">', $txt['notification_info'], '</p>
@@ -1624,7 +1646,10 @@ function template_groupMembership()
 		<form action="', $scripturl, '?action=profile;area=groupmembership;save" method="post" accept-charset="', $context['character_set'], '" name="creator" id="creator">
 			<div class="cat_bar">
 				<h3 class="catbg">
-					<img src="', $settings['images_url'], '/icons/profile_sm.gif" alt="" class="icon">', $txt['profile'], '
+					<span>
+						<i class="fas fa-user"></i>
+						', $txt['profile'], '
+					</span>
 				</h3>
 			</div>
 			<p class="description">', $txt['groupMembership_info'], '</p>';
@@ -1796,7 +1821,10 @@ function template_ignoreboards()
 	<form action="', $scripturl, '?action=profile;area=ignoreboards;save" method="post" accept-charset="', $context['character_set'], '" name="creator" id="creator">
 		<div class="cat_bar">
 			<h3 class="catbg">
-				<img src="', $settings['images_url'], '/icons/profile_sm.gif" alt="" class="icon">', $txt['profile'], '
+				<span>
+					<i class="fas fa-user"></i>
+					', $txt['profile'], '
+				</span>
 			</h3>
 		</div>
 		<p class="description">', $txt['ignoreboards_info'], '</p>
@@ -1891,8 +1919,10 @@ function template_viewWarning()
 	echo '
 		<div class="title_bar">
 			<h3 class="titlebg">
-				<img src="', $settings['images_url'], '/icons/profile_sm.gif" alt="" class="icon">
-				', sprintf($txt['profile_viewwarning_for_user'], $context['member']['name']), '
+				<span>
+					<i class="fas fa-user"></i>
+					', sprintf($txt['profile_viewwarning_for_user'], $context['member']['name']), '
+				</span>
 			</h3>
 		</div>
 		<div class="windowbg">
@@ -2074,8 +2104,10 @@ function template_issueWarning()
 	<form action="', $scripturl, '?action=profile;u=', $context['id_member'], ';area=issuewarning" method="post" class="flow_hidden" accept-charset="', $context['character_set'], '">
 		<div class="cat_bar">
 			<h3 class="catbg">
-				<img src="', $settings['images_url'], '/icons/profile_sm.gif" alt="" class="icon">
-				', $context['user']['is_owner'] ? $txt['profile_warning_level'] : $txt['profile_issue_warning'], '
+				<span>
+					<i class="fas fa-user"></i>
+					', $context['user']['is_owner'] ? $txt['profile_warning_level'] : $txt['profile_issue_warning'], '
+				</span>
 			</h3>
 		</div>';
 
@@ -2265,7 +2297,10 @@ function template_deleteAccount()
 		<form action="', $scripturl, '?action=profile;area=deleteaccount;save" method="post" accept-charset="', $context['character_set'], '" name="creator" id="creator">
 			<div class="title_bar">
 				<h3 class="titlebg">
-					<img src="', $settings['images_url'], '/icons/profile_sm.gif" alt="" class="icon">', $txt['deleteAccount'], '
+					<span>
+						<i class="fas fa-user"></i>
+						', $txt['deleteAccount'], '
+					</span>
 				</h3>
 			</div>';
 	// If deleting another account give them a lovely info box.
@@ -2806,7 +2841,8 @@ function template_authentication_method()
 		<form action="', $scripturl, '?action=profile;area=authentication;save" method="post" accept-charset="', $context['character_set'], '" name="creator" id="creator" enctype="multipart/form-data">
 			<div class="cat_bar">
 				<h3 class="catbg">
-					<img src="', $settings['images_url'], '/icons/profile_sm.gif" alt="" class="icon">', $txt['authentication'], '
+					<i class="fas fa-user"></i>
+					', $txt['authentication'], '
 				</h3>
 			</div>
 			<p class="windowbg description">', $txt['change_authentication'], '</p>

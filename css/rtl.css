@@ -321,12 +321,6 @@ h4#pollquestion
 	padding: 1em 2em 0 2.5em;
 	margin: 0 0 1em 0;
 }
-#poll_options div.submitbutton
-{
-	clear: both;
-	padding: 0 2em 1em 0;
-	margin: 0 0 1em 0;
-}
 
 /* Poll results */
 #poll_options dl.options

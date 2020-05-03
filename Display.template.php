@@ -35,7 +35,11 @@ function template_main()
 			<div id="poll">
 				<div class="cat_bar">
 					<h3 class="catbg">
-						<img src="', $settings['images_url'], '/topic/', $context['poll']['is_locked'] ? 'normal_poll_locked' : 'normal_poll', '.gif" alt="" class="icon"> ', $txt['poll'], '
+						<span>
+							<i class="fas fa-poll fa-fw"></i>
+							', $context['poll']['is_locked'] ? '<i class="fas fa-lock fa-fw"></i>' : '', '
+							', $txt['poll'], '
+						</span>
 					</h3>
 				</div>
 				<div class="windowbg">
@@ -94,7 +98,7 @@ function template_main()
 
 			echo '
 							</ul>
-							<div class="submitbutton">
+							<div class="buttonlist righttext">
 								<input type="submit" value="', $txt['poll_vote'], '" class="button_submit">
 								<input type="hidden" name="', $context['session_var'], '" value="', $context['session_id'], '">
 							</div>
@@ -109,8 +113,7 @@ function template_main()
 		echo '
 					</div>
 				</div>
-			</div>
-			<div id="pollmoderation">';
+			</div>';
 
 		// Build the poll moderation button array.
 		$poll_buttons = array(
@@ -124,8 +127,6 @@ function template_main()
 
 		template_button_strip($poll_buttons);
 
-		echo '
-			</div>';
 	}
 
 	// Does this topic have some events linked to it?
@@ -178,9 +179,10 @@ function template_main()
 			<div id="forumposts">
 				<div class="cat_bar">
 					<h3 class="catbg">
-						<img src="', $settings['images_url'], '/topic/', $context['class'], '.gif" align="bottom" alt="">
-						<span id="author">', $txt['author'], '</span>
-						', $txt['topic'], ': ', $context['subject'], ' &nbsp;(', $txt['read'], ' ', $context['num_views'], ' ', $txt['times'], ')
+						<span>
+							<img src="', $settings['images_url'], '/topic/', $context['class'], '.gif" align="bottom" alt="">
+							', $txt['topic'], ': ', $context['subject'], ' &nbsp;(', $txt['read'], ' ', $context['num_views'], ' ', $txt['times'], ')
+						</span>
 					</h3>
 				</div>';
 
@@ -671,10 +673,10 @@ function template_main()
 			<div class="tborder" id="quickreplybox">
 				<div class="cat_bar">
 					<h3 class="catbg">
-						<a href="javascript:oQuickReply.swap();">
+						<a href="javascript:oQuickReply.swap();">', $txt['quick_reply'], '</a>
+						<a href="javascript:oQuickReply.swap();" class="righttext">
 							<img src="', $settings['images_url'], '/', $options['display_quick_reply'] == 2 ? 'collapse' : 'expand', '.gif" alt="+" id="quickReplyExpand" class="icon">
 						</a>
-						<a href="javascript:oQuickReply.swap();">', $txt['quick_reply'], '</a>
 					</h3>
 				</div>
 				<div id="quickReplyOptions"', $options['display_quick_reply'] == 2 ? '' : ' style="display: none"', '>

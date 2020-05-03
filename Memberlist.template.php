@@ -175,35 +175,34 @@ function template_search()
 		<div id="memberlist">
 			<div class="cat_bar">
 				<h3 class="catbg mlist">
-					', !empty($settings['use_buttons']) ? '<img src="' . $settings['images_url'] . '/buttons/search.gif" alt="" class="icon">' : '', $txt['mlist_search'], '
+					<span>
+						<i class="fas fa-search"></i>
+						', $txt['mlist_search'], '
+					</span>
 				</h3>
 			</div>
 			<div class="pagesection">
 				', template_button_strip($memberlist_buttons, 'right'), '
 			</div>';
 	// Display the input boxes for the form.
-	echo '	<div id="memberlist_search" class="clear">
+	echo '
+			<div id="memberlist_search" class="clear">
 				<div class="roundframe">
 					<div id="mlist_search" class="flow_hidden">
 						<div id="search_term_input"><br>
 							<strong>', $txt['search_for'], ':</strong>
 							<input type="text" name="search" value="', $context['old_search'], '" size="35" class="input_text"> <input type="submit" name="submit" value="' . $txt['search'] . '" class="button_submit">
 						</div>
-						<span class="floatleft">';
+						<ul class="reset bytwo">';
 
-	$count = 0;
+
 	foreach ($context['search_fields'] as $id => $title)
 	{
 		echo '
-							<label for="fields-', $id, '"><input type="checkbox" name="fields[]" id="fields-', $id, '" value="', $id, '" ', in_array($id, $context['search_defaults']) ? 'checked="checked"' : '', ' class="input_check">', $title, '</label><br>';
-	// Half way through?
-		if (round(count($context['search_fields']) / 2) == ++$count)
-			echo '
-						</span>
-						<span class="floatleft">';
+							<li><label for="fields-', $id, '"><input type="checkbox" name="fields[]" id="fields-', $id, '" value="', $id, '" ', in_array($id, $context['search_defaults']) ? 'checked="checked"' : '', ' class="input_check">', $title, '</label></li>';
 	}
 		echo '
-						</span>
+						</ul>
 					</div>
 				</div>
 			</div>

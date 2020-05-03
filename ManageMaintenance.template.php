@@ -39,7 +39,10 @@ function template_maintain_database()
 
 		<div class="cat_bar">
 			<h3 class="catbg">
-				<a href="', $scripturl, '?action=helpadmin;help=maintenance_backup" onclick="return reqWin(this.href);" class="help"><i class="fas fa-question-circle"></i></a> ', $txt['maintain_backup'], '
+				<span>
+					<a href="', $scripturl, '?action=helpadmin;help=maintenance_backup" onclick="return reqWin(this.href);" class="help"><i class="fas fa-question-circle"></i></a>
+					', $txt['maintain_backup'], '
+				</span>
 			</h3>
 		</div>
 
@@ -289,7 +292,10 @@ function template_maintain_members()
 		</div>
 		<div class="cat_bar">
 			<h3 class="catbg">
-				<a href="', $scripturl, '?action=helpadmin;help=maintenance_members" onclick="return reqWin(this.href);" class="help"><i class="fas fa-question-circle"></i></a> ', $txt['maintain_members'], '
+				<span>
+					<a href="', $scripturl, '?action=helpadmin;help=maintenance_members" onclick="return reqWin(this.href);" class="help"><i class="fas fa-question-circle"></i></a>
+					', $txt['maintain_members'], '
+				</span>
 			</h3>
 		</div>
 		<div class="windowbg">

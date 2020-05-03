@@ -619,7 +619,3 @@ h3.grid_header
 {
 	margin: 0 0 0 1ex;
 }
-#manage_boards span.botslice, #manage_maintenance span.botslice, #manage_mail span.botslice
-{
-	margin-bottom: 4px;
-}

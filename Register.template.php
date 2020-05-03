@@ -25,19 +25,16 @@ function template_registration_agreement()
 			</div>
 			<div class="roundframe">
 				<div>', $context['agreement'], '</div>
-			</div>
-			<span class="lowerframe"><span></span></span>';
+			</div>';
 
 	if (!empty($context['policy']))
 		echo '
 			<div class="cat_bar">
 				<h3 class="catbg">', $txt['privacy_policy'], '</h3>
 			</div>
-			<span class="upperframe"><span></span></span>
 			<div class="roundframe">
 				<div>', $context['policy'], '</div>
-			</div>
-			<span class="lowerframe"><span></span></span>';
+			</div>';
 
 	echo '
 			<div id="confirm_buttons">';

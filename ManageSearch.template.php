@@ -224,7 +224,6 @@ function template_select_search_method()
 						<input type="hidden" name="', $context['session_var'], '" value="', $context['session_id'], '">
 					</div>
 				</div>
-				<span class="botslice clear"><span></span></span>
 			</div>
 		</form>
 	</div>

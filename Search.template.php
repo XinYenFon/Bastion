@@ -18,7 +18,7 @@ function template_main()
 	<form action="', $scripturl, '?action=search2" method="post" accept-charset="', $context['character_set'], '" name="searchform" id="searchform">
 		<div class="cat_bar">
 			<h3 class="catbg">
-				', !empty($settings['use_buttons']) ? '<img src="' . $settings['images_url'] . '/buttons/search.gif" alt="" class="icon">' : ' ', $txt['set_parameters'], '
+				<span>', !empty($settings['use_buttons']) ? '<i class="fas fa-search"></i> ' : ' ', $txt['set_parameters'], '</span>
 			</h3>
 		</div>';
 
@@ -274,13 +274,14 @@ function template_results()
 	echo '
 		<div class="cat_bar">
 			<h3 class="catbg">
-				<span class="floatright">';
-					if (!empty($options['display_quick_mod']) && $options['display_quick_mod'] == 1)
-					echo '
-							<input type="checkbox" onclick="invertAll(this, this.form, \'topics[]\');" class="input_check">';
+				<span>
+					<i class="fas fa-search"></i> ', $txt['mlist_search_results'],':&nbsp;',$context['search_params']['search'],'
+				</span>';
+
+			if (!empty($options['display_quick_mod']) && $options['display_quick_mod'] == 1)
+			echo '
+					<span class="righttext"><input type="checkbox" onclick="invertAll(this, this.form, \'topics[]\');" class="input_check"></span>';
 				echo '
-				</span>
-				<img src="' . $settings['images_url'] . '/buttons/search.gif" alt="">&nbsp;', $txt['mlist_search_results'],':&nbsp;',$context['search_params']['search'],'
 			</h3>
 		</div>
 		<div class="pagesection">
@@ -367,42 +368,39 @@ function template_results()
 		if (!empty($options['display_quick_mod']) && $options['display_quick_mod'] == 1 && !empty($context['topics']))
 		{
 			echo '
-			<div class="middletext titlebg2" style="padding: 4px;">
-				<div class="floatright">
-					<select name="qaction"', $context['can_move'] ? ' onchange="this.form.moveItTo.disabled = (this.options[this.selectedIndex].value != \'move\');"' : '', '>
-						<option value="">--------</option>', $context['can_remove'] ? '
-						<option value="remove">' . $txt['quick_mod_remove'] . '</option>' : '', $context['can_lock'] ? '
-						<option value="lock">' . $txt['quick_mod_lock'] . '</option>' : '', $context['can_sticky'] ? '
-						<option value="sticky">' . $txt['quick_mod_sticky'] . '</option>' : '',	$context['can_move'] ? '
-						<option value="move">' . $txt['quick_mod_move'] . ': </option>' : '', $context['can_merge'] ? '
-						<option value="merge">' . $txt['quick_mod_merge'] . '</option>' : '', '
-						<option value="markread">', $txt['quick_mod_markread'], '</option>
-					</select>';
+			<div class="middletext righttext">
+				<select name="qaction"', $context['can_move'] ? ' onchange="this.form.moveItTo.disabled = (this.options[this.selectedIndex].value != \'move\');"' : '', '>
+					<option value="">--------</option>', $context['can_remove'] ? '
+					<option value="remove">' . $txt['quick_mod_remove'] . '</option>' : '', $context['can_lock'] ? '
+					<option value="lock">' . $txt['quick_mod_lock'] . '</option>' : '', $context['can_sticky'] ? '
+					<option value="sticky">' . $txt['quick_mod_sticky'] . '</option>' : '',	$context['can_move'] ? '
+					<option value="move">' . $txt['quick_mod_move'] . ': </option>' : '', $context['can_merge'] ? '
+					<option value="merge">' . $txt['quick_mod_merge'] . '</option>' : '', '
+					<option value="markread">', $txt['quick_mod_markread'], '</option>
+				</select>';
 
 			if ($context['can_move'])
 			{
-					echo '
-					<select id="moveItTo" name="move_to" disabled="disabled">';
+				echo '
+				<select id="moveItTo" name="move_to" disabled="disabled">';
 
-					foreach ($context['move_to_boards'] as $category)
-					{
-						echo '
-						<optgroup label="', $category['name'], '">';
-						foreach ($category['boards'] as $board)
-								echo '
-						<option value="', $board['id'], '"', $board['selected'] ? ' selected="selected"' : '', '>', $board['child_level'] > 0 ? str_repeat('==', $board['child_level'] - 1) . '=&gt;' : '', ' ', $board['name'], '</option>';
-						echo '
-						</optgroup>';
-					}
+				foreach ($context['move_to_boards'] as $category)
+				{
 					echo '
-					</select>';
+					<optgroup label="', $category['name'], '">';
+					foreach ($category['boards'] as $board)
+							echo '
+					<option value="', $board['id'], '"', $board['selected'] ? ' selected="selected"' : '', '>', $board['child_level'] > 0 ? str_repeat('==', $board['child_level'] - 1) . '=&gt;' : '', ' ', $board['name'], '</option>';
+					echo '
+					</optgroup>';
+				}
+				echo '
+				</select>';
 			}
 
 			echo '
-					<input type="hidden" name="redirect_url" value="', $scripturl . '?action=search2;params=' . $context['params'], '">
-					<input type="submit" style="font-size: 0.8em;" value="', $txt['quick_mod_go'], '" onclick="return this.form.qaction.value != \'\' &amp;&amp; confirm(\'', $txt['quickmod_confirm'], '\');" class="button_submit">
-				</div>
-				<br class="clear">
+				<input type="hidden" name="redirect_url" value="', $scripturl . '?action=search2;params=' . $context['params'], '">
+				<input type="submit" style="font-size: 0.8em;" value="', $txt['quick_mod_go'], '" onclick="return this.form.qaction.value != \'\' &amp;&amp; confirm(\'', $txt['quickmod_confirm'], '\');" class="button_submit">
 			</div>';
 		}
 
@@ -418,7 +416,7 @@ function template_results()
 		echo '
 		<div class="cat_bar">
 			<h3 class="catbg">
-				<img src="' . $settings['images_url'] . '/buttons/search.gif" alt="">&nbsp;', $txt['mlist_search_results'],':&nbsp;',$context['search_params']['search'],'
+				<span><i class="fas fa-search"></i> ', $txt['mlist_search_results'],' ',$context['search_params']['search'],'</span>
 			</h3>
 		</div>
 		<div class="pagesection">

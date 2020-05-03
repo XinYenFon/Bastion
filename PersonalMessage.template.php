@@ -917,7 +917,10 @@ function template_send()
 	echo '
 		<div class="cat_bar">
 			<h3 class="catbg">
-				<img src="', $settings['images_url'], '/icons/im_newmsg.gif" alt="', $txt['new_message'], '" title="', $txt['new_message'], '">&nbsp;', $txt['new_message'], '
+				<span>
+					<i class="fas fa-scroll"></i>
+					', $txt['new_message'], '
+				</span>
 			</h3>
 		</div>';
 

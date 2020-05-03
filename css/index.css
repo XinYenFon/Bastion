@@ -135,8 +135,8 @@ hr, .hrcolor
 {
 	height: 1px;
 	border: 0;
-	color: #666;
-	background-color: #8e0000;
+	color: #DDD;
+	background-color: #cccccc99;
 }
 .hrcolor {
 	margin: 10px 0;
@@ -145,7 +145,7 @@ hr, .hrcolor
 /* By default set the color on these tags as #000. */
 h1, h2, h3, h4, h5, h6
 {
-	color: #F00;
+	color: #FFF;
 	font-size: 1em;
 	margin: 0;
 	padding: 0;
@@ -154,7 +154,7 @@ h1, h2, h3, h4, h5, h6
 /* Fieldsets are used to group elements. */
 fieldset
 {
-	border: 1px solid #c4c4c4;
+	border: 1px solid lightgray;
 	padding: 1em;
 	margin: 0 0 0.5em 0;
 }
@@ -446,11 +446,7 @@ tr.catbg th a:link, tr.catbg th a:visited, tr.catbg2 td a:link, tr.catbg2 td a:v
 /* the page navigation area */
 .pagesection
 {
-	padding: 0.2em;
-	overflow: hidden;
-}
-.cat_bar + .pagesection {
-	border-bottom: 1px solid #f0f4f7;
+	padding: 0.5em 0;
 }
 div.pagesection div.floatright input
 {
@@ -720,15 +716,11 @@ img#upshrink_ic, img#newsupshrink
 	float: right;
 	margin: 10px 5px 0 0;
 }
-table.table_list a.unreadlink
-{
-	float: right;
-}
 /* Take this collapse class as generic */
 a.collapse
 {
-	margin: 2px 5px 0 1em;
-	float: right;
+	margin: 2px 1em 0 0;
+	text-align: right;
 }
 
 /* The half-round header bars for some tables. */
@@ -833,7 +825,7 @@ table.table_grid thead tr.catbg th
 /* Styles for the standard dropdown menus.
 ------------------------------------------------------- */
 #main_menu {
-	padding: 0 0 0 2%;
+	padding: 0 0 0 5%;
 	background: rgba(0, 0, 0, 0.2);
 }
 
@@ -941,20 +933,20 @@ table.table_grid thead tr.catbg th
 /* Styles for the standard button lists.
 ------------------------------------------------------- */
 .buttonlist {
-	margin-bottom: 5px;
+	margin: 5px 0;
 }
 .buttonlist ul
 {
 	z-index: 100;
-	padding: 5px;
-	margin: 0 0.2em 5px 0;
+	padding: 0;
+	margin: 0;
 }
 .buttonlist ul li
 {
 	margin: 0;
 	padding: 0;
 	list-style: none;
-	float: left;
+	display: inline-block;
 }
 .buttonlist ul li a
 {
@@ -1028,10 +1020,6 @@ h1.forumtitle
 	padding: 0;
 	float: right;
 	line-height: 3em;
-}
-h3, h4
-{
-	padding-bottom: 3px;
 }
 /* the upshrink image needs some tweaking */
 img#upshrink
@@ -1442,13 +1430,6 @@ h4#pollquestion
 	padding: 1em 2.5em 0 2em;
 	margin: 0 0 1em 0;
 }
-#poll_options div.submitbutton
-{
-	border-bottom: 1px solid #9999aa;
-	clear: both;
-	padding: 0 0 1em 2em;
-	margin: 0 0 1em 0;
-}
 
 /* Poll results */
 #poll_options dl.options
@@ -1692,10 +1673,7 @@ img.smiley
 {
 	margin: 1em 0 0 0;
 }
-#forumposts span.botslice
-{
-	clear: both;
-}
+
 .attachments hr
 {
 	clear: both;
@@ -2522,10 +2500,6 @@ dl
 	display: none;
 	clear: both;
 }
-#main_admsection #basicinfo .botslice
-{
-	clear: both;
-}
 
 /* Simple feedback messages */
 div#profile_error, div#profile_success
@@ -2664,8 +2638,8 @@ div#profile_success
 
 .counter
 {
-	margin: 0 0 0 0;
-	padding: 0.2em 0.5em 0.1em 0.2em;
+	margin: 0;
+	padding: 0 0.5em 0 0.2em;
 	font-size: 2.2em;
 	font-weight: bold;
 	color: #3f3f3f;
@@ -3075,7 +3049,7 @@ span.hidelink
 #mlist_search
 {
 	margin: auto;
-	width: 500px;
+	width: 600px;
 }
 
 /* Styles for the basic search section.
@@ -3097,7 +3071,6 @@ span.hidelink
 }
 #search_term_input
 {
-	font-size: 115%;
 	margin: 0 0 1em;
 }
 
@@ -3154,12 +3127,6 @@ span.hidelink
 
 /* Styles for the help section.
 ------------------------------------------------- */
-
-#help_container
-{
-	margin: 4px 0 0 0;
-	padding: 0 0 8px 0;
-}
 #helpmain
 {
 	padding: 0 1em;
@@ -3216,10 +3183,6 @@ a.subject:hover, .member_link > a:hover, .catbg a:hover,
 	border-bottom: 1px solid #5F7CA210;
 	background-color: #5F7CA299;
 	padding: 8px;
-}
-h3.titlebg, h4.titlebg {
-	color: #FFF;
-	padding: 0 0 0 5px;
 }
 
 .table_list td {
@@ -3323,7 +3286,7 @@ h3.titlebg, h4.titlebg {
 	flex: 1 100%;
 }
 #content_section {
-	padding: 0 1%;
+	padding: 0 5%;
 }
 .abg {
 	background-image: url(../images/abg.jpg);
@@ -3332,4 +3295,69 @@ h3.titlebg, h4.titlebg {
 	background: orange;
 	padding: 0 3px;
 	border-radius: 3px;
+}
+/* Social Buttons -why not- */
+#social_evil_buttons {
+	position: fixed;
+	left: 0;
+	bottom: 40%;
+	display: flex;
+	flex-flow: row wrap;
+	width: 3%;
+}
+#social_evil_buttons a {
+	padding: 15px;
+	display: block;
+	flex: 1 100%;
+	text-align: center;
+}
+#social_evil_buttons a i {
+	vertical-align: middle;
+}
+.facebook {
+    background: #4267B2;
+}
+.twitter {
+    background: #1DA1F2;
+}
+.reddit {
+	background: #ff4500;
+}
+.mailto {
+	background: grey;
+}
+/* H3 Flex */
+h3.catbg {
+	display: flex;
+}
+h3.catbg > * {
+	flex: 1 50%;
+	height: inherit;
+	align-self: center;
+}
+h3.catbg > a[id^="c"]:empty {
+	display: none;
+}
+
+/* bytwo */
+.bytwo {
+	column-count: 2;
+}
+
+/* On/Off Icons (User) */
+.on, .off {
+	display: inline-block;
+	width: 14px;
+	height: 14px;
+	border-radius: 50%;
+	border: 1px solid transparent;
+	vertical-align: middle;
+}
+.on {
+	background: #89e75a;
+	border-color: #74d246;
+}
+.off {
+	background: #a7a2a2;
+	border-color: #969292;
 }

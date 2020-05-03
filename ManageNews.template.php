@@ -256,7 +256,10 @@ function template_email_members_compose()
 		<form action="', $scripturl, '?action=admin;area=news;sa=mailingsend" method="post" accept-charset="', $context['character_set'], '">
 			<div class="cat_bar">
 				<h3 class="catbg">
-					<a href="', $scripturl, '?action=helpadmin;help=email_members" onclick="return reqWin(this.href);" class="help"><i class="fas fa-question-circle"></i></a> ', $txt['admin_newsletters'], '
+					<span>
+						<a href="', $scripturl, '?action=helpadmin;help=email_members" onclick="return reqWin(this.href);" class="help"><i class="fas fa-question-circle"></i></a>
+						', $txt['admin_newsletters'], '
+					</span>
 				</h3>
 			</div>
 			<div class="information">
@@ -304,7 +307,10 @@ function template_email_members_send()
 		<form action="', $scripturl, '?action=admin;area=news;sa=mailingsend" method="post" accept-charset="', $context['character_set'], '" name="autoSubmit" id="autoSubmit">
 			<div class="cat_bar">
 				<h3 class="catbg">
-					<a href="', $scripturl, '?action=helpadmin;help=email_members" onclick="return reqWin(this.href);" class="help"><i class="fas fa-question-circle"></i></a> ', $txt['admin_newsletters'], '
+					<span>
+						<a href="', $scripturl, '?action=helpadmin;help=email_members" onclick="return reqWin(this.href);" class="help"><i class="fas fa-question-circle"></i></a>
+						', $txt['admin_newsletters'], '
+					</span>
 				</h3>
 			</div>
 			<div class="windowbg">

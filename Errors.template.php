@@ -49,7 +49,10 @@ function template_error_log()
 			// ]]></script>
 			<div class="title_bar clear_right">
 				<h3 class="titlebg">
-					<a href="', $scripturl, '?action=helpadmin;help=error_log" onclick="return reqWin(this.href);" class="help"><i class="fas fa-question-circle"></i></a> ', $txt['errlog'], '
+					<span>
+						<a href="', $scripturl, '?action=helpadmin;help=error_log" onclick="return reqWin(this.href);" class="help"><i class="fas fa-question-circle"></i></a>
+						', $txt['errlog'], '
+					</span>
 				</h3>
 			</div>
 			<table border="0" cellspacing="1" class="table_grid" id="error_log">

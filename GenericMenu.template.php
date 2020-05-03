@@ -223,7 +223,8 @@ function template_generic_menu_tabs(&$menu_context)
 
 	echo '
 	<div class="cat_bar">
-		<h3 class="catbg">';
+		<h3 class="catbg">
+			<span>';
 
 	// Exactly how many tabs do we have?
 	foreach ($context['tabs'] as $id => $tab)
@@ -280,12 +281,10 @@ function template_generic_menu_tabs(&$menu_context)
 		echo $tab_context['title'];
 	}
 	else
-	{
-		echo '
-			', $tab_context['title'];
-	}
+		echo $tab_context['title'];
 
 	echo '
+			</span>
 		</h3>
 	</div>';
 

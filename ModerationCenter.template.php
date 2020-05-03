@@ -56,7 +56,10 @@ function template_latest_news()
 	echo '
 		<div class="cat_bar">
 			<h3 class="catbg">
-				<a href="', $scripturl, '?action=helpadmin;help=live_news" onclick="return reqWin(this.href);" class="help"><i class="fas fa-question-circle"></i></a> ', $txt['mc_latest_news'], '
+				<span>
+					<a href="', $scripturl, '?action=helpadmin;help=live_news" onclick="return reqWin(this.href);" class="help"><i class="fas fa-question-circle"></i></a>
+					', $txt['mc_latest_news'], '
+				</span>
 			</h3>
 		</div>
 		<div class="windowbg">

@@ -19,13 +19,14 @@ function template_admin()
 	echo '
 	<div id="admincenter">
 		<div class="cat_bar">
-			<h3 class="catbg">';
+			<h3 class="catbg">
+			<span>', $txt['admin_center'], '</span>';
 
 	if ($context['user']['is_admin'])
 		echo '
-			<object id="quick_search">
-				<form action="', $scripturl, '?action=admin;area=search" method="post" accept-charset="', $context['character_set'], '" class="floatright">
-					<img src="', $settings['images_url'] , '/filter.gif" alt="">
+			<object id="quick_search" class="righttext">
+				<form action="', $scripturl, '?action=admin;area=search" method="post" accept-charset="', $context['character_set'], '">
+					<i class="fas fa-search"></i>
 					<input type="text" name="search_term" value="', $txt['admin_search'], '" onclick="if (this.value == \'', $txt['admin_search'], '\') this.value = \'\';" class="input_text">
 					<select name="search_type">
 						<option value="internal"', (empty($context['admin_preferences']['sb']) || $context['admin_preferences']['sb'] == 'internal' ? ' selected="selected"' : ''), '>', $txt['admin_search_type_internal'], '</option>
@@ -36,7 +37,7 @@ function template_admin()
 				</form>
 			</object>';
 
-	echo $txt['admin_center'], '
+	echo '
 			</h3>
 		</div>
 		<div class="roundframe">
@@ -58,7 +59,10 @@ function template_admin()
 			<div id="live_news" class="floatleft">
 				<div class="cat_bar">
 					<h3 class="catbg">
-						<a href="', $scripturl, '?action=helpadmin;help=live_news" onclick="return reqWin(this.href);" class="help"><i class="fas fa-question-circle"></i></a> ', $txt['live'], '
+						<span>
+							<a href="', $scripturl, '?action=helpadmin;help=live_news" onclick="return reqWin(this.href);" class="help"><i class="fas fa-question-circle"></i></a>
+							', $txt['live'], '
+						</span>
 					</h3>
 				</div>
 				<div class="windowbg nopadding">
@@ -111,7 +115,7 @@ function template_admin()
 	foreach ($context['quick_admin_tasks'] as $task)
 		echo '
 					<li>
-						', !empty($task['icon']) ? '<a href="' . $task['href'] . '"><img src="' . $settings['default_images_url'] . '/admin/' . $task['icon'] . '" alt="" class="home_image png_fix"></a>' : '', '
+						', !empty($task['icon']) ? '<a href="' . $task['href'] . '"><i class="fas fa-' . $task['icon'] . ' fa-fw"></i></a>' : '', '
 						<h5>', $task['link'], '</h5>
 						<span class="task">', $task['description'],'</span>
 					</li>';
@@ -119,7 +123,6 @@ function template_admin()
 	echo '
 				</ul>
 			</div>
-			<span class="botslice clear"><span></span></span>
 		</div>
 	</div>
 	<br class="clear">';
@@ -232,7 +235,10 @@ function template_credits()
 	echo '
 		<div class="cat_bar">
 			<h3 class="catbg">
-				<a href="', $scripturl, '?action=helpadmin;help=latest_support" onclick="return reqWin(this.href);" class="help"><i class="fas fa-question-circle"></i></a> ', $txt['support_latest'], '
+				<span>
+					<a href="', $scripturl, '?action=helpadmin;help=latest_support" onclick="return reqWin(this.href);" class="help"><i class="fas fa-question-circle"></i></a>
+					', $txt['support_latest'], '
+				</span>
 			</h3>
 		</div>
 		<div class="windowbg">
@@ -787,8 +793,10 @@ function template_show_settings()
 				echo '
 					<div class="cat_bar">
 						<h3 class="', !empty($config_var['class']) ? $config_var['class'] : 'catbg', '"', !empty($config_var['force_div_id']) ? ' id="' . $config_var['force_div_id'] . '"' : '', '>
-							', ($config_var['help'] ? '<a href="' . $scripturl . '?action=helpadmin;help=' . $config_var['help'] . '" onclick="return reqWin(this.href);" class="help"><i class="fas fa-question-circle"></i></a>' : ''), '
-							', $config_var['label'], '
+							<span>
+								', ($config_var['help'] ? '<a href="' . $scripturl . '?action=helpadmin;help=' . $config_var['help'] . '" onclick="return reqWin(this.href);" class="help"><i class="fas fa-question-circle"></i></a>' : ''), '
+								', $config_var['label'], '
+							</span>
 						</h3>
 					</div>';
 			}
@@ -1253,6 +1261,9 @@ function template_admin_search_results()
 	echo '
 		<div class="cat_bar">
 			<h3 class="catbg">
+				<span>
+					<i class="fa fa-search"></i> ', sprintf($txt['admin_search_results_desc'], $context['search_term']), '
+				</span>
 				<object id="quick_search">
 					<form action="', $scripturl, '?action=admin;area=search" method="post" accept-charset="', $context['character_set'], '" class="floatright">
 						<input type="text" name="search_term" value="', $context['search_term'], '" class="input_text">
@@ -1260,7 +1271,6 @@ function template_admin_search_results()
 						<input type="submit" name="search_go" value="', $txt['admin_search_results_again'], '" class="button_submit">
 					</form>
 				</object>
-				<img src="' . $settings['images_url'] . '/buttons/search.gif" alt="">&nbsp;', sprintf($txt['admin_search_results_desc'], $context['search_term']), '
 			</h3>
 		</div>
 	<div class="windowbg nopadding">
@@ -1373,10 +1383,10 @@ function template_core_features()
 		echo '
 			<div class="windowbg">
 				<div class="content features">
-					<img class="features_image png_fix" src="', $settings['default_images_url'], '/admin/feature_', $id, '.png" alt="', $feature['title'], '">
+					<i class="fas fa-', $id, ' fa-2x fa-fw"></i>
 					<div class="features_switch" id="js_feature_', $id, '" style="display: none;">
 						<a href="', $scripturl, '?action=admin;area=featuresettings;sa=core;', $context['session_var'], '=', $context['session_id'], ';toggle=', $id, ';state=', $feature['enabled'] ? 0 : 1, '" onclick="return toggleItem(\'', $id, '\');">
-							<input type="hidden" name="feature_', $id, '" id="feature_', $id, '" value="', $feature['enabled'] ? 1 : 0, '"><img src="', $settings['images_url'], '/admin/switch_', $feature['enabled'] ? 'on' : 'off', '.png" id="switch_', $id, '" style="margin-top: 1.3em;" alt="', $txt['core_settings_switch_' . ($feature['enabled'] ? 'off' : 'on')], '" title="', $txt['core_settings_switch_' . ($feature['enabled'] ? 'off' : 'on')], '">
+							<input type="hidden" name="feature_', $id, '" id="feature_', $id, '" value="', $feature['enabled'] ? 1 : 0, '"><i class="fa fa-', $feature['enabled'] ? 'check on' : 'times off', ' fa-2x fa-fw" id="switch_', $id, '" style="margin-top: 1.3em;" alt="', $txt['core_settings_switch_' . ($feature['enabled'] ? 'off' : 'on')], '" title="', $txt['core_settings_switch_' . ($feature['enabled'] ? 'off' : 'on')], '"></i>
 						</a>
 					</div>
 					<h4>', ($feature['enabled'] && $feature['url'] ? '<a href="' . $feature['url'] . '">' . $feature['title'] . '</a>' : $feature['title']), '</h4>
@@ -1386,7 +1396,6 @@ function template_core_features()
 						<label for="plain_feature_', $id, '_radio_off"><input type="radio" name="feature_plain_', $id, '" id="plain_feature_', $id, '_radio_off" value="0"', !$feature['enabled'] ? ' checked="checked"' : '', ' class="input_radio">', $txt['core_settings_disabled'], '</label>
 					</div>
 				</div>
-				<span class="botslice clear_right"><span></span></span>
 			</div>';
 	}
 

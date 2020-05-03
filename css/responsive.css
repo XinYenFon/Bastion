@@ -49,6 +49,15 @@
 		max-width: 100%;
 		max-height: 100%;
 	}
+	/* Social Evil Something */
+	#social_evil_buttons {
+		bottom: 0;
+		width: 100%;
+		flex-flow: row nowrap;
+	}
+	#social_evil_buttons a {
+		padding: 10px;
+	}
 }
 
 @media screen and (max-width: 480px) {
