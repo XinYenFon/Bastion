@@ -298,9 +298,6 @@ function template_body_below()
 	<div id="footer_section"><div class="frame">
 		<ul class="reset">
 			<li class="copyright">', theme_copyright(), '</li>
-			<li><a id="button_xhtml" href="http://validator.w3.org/check?uri=referer" target="_blank" class="new_win" title="', $txt['valid_xhtml'], '"><span>', $txt['xhtml'], '</span></a></li>
-			', !empty($modSettings['xmlnews_enable']) && (!empty($modSettings['allow_guestAccess']) || $context['user']['is_logged']) ? '<li><a id="button_rss" href="' . $scripturl . '?action=.xml;type=rss" class="new_win"><span>' . $txt['rss'] . '</span></a></li>' : '', '
-			<li class="last"><a id="button_wap2" href="', $scripturl , '?wap2" class="new_win"><span>', $txt['wap2'], '</span></a></li>
 		</ul>';
 
 	// Show the load time?
@@ -479,7 +476,7 @@ function template_button_strip($button_strip, $direction = 'top', $strip_options
 }
 function template_evil_social_share () {
 	// We have to be in boardIndex, messageIndex or Topic... otherwise no!
-	global $context, $board, $topic;
+	global $context, $modSettings, $txt, $scripturl, $board, $topic;
 	if (empty($_REQUEST['action'])) {
 		// Output what we have...
 		echo '
@@ -488,6 +485,7 @@ function template_evil_social_share () {
 			<a href="https://twitter.com/share?text='. $context['page_title_html_safe']. '&url='. $context['canonical_url']. '" class="twitter"><i class="fab fa-twitter fa-2x fa-fw"></i></a>
 			<a href="https://www.reddit.com/submit?url='. $context['canonical_url']. '" class="reddit"><i class="fab fa-reddit-alien fa-2x fa-fw"></i></a>
 			<a href="mailto:?'. $context['page_title_html_safe']. '&body='. $context['canonical_url'].'" class="mailto"><i class="fas fa-envelope fa-2x fa-fw"></i></a>
+			', !empty($modSettings['xmlnews_enable']) && (!empty($modSettings['allow_guestAccess']) || $context['user']['is_logged']) ? '<a id="button_rss" href="' . $scripturl . '?action=.xml;type=rss" class="rss" alt="' . $txt['rss'] . '"><i class="fas fa-rss fa-2x fa-fw"></i></a>' : '', '
 		</div>';
 	}
 }

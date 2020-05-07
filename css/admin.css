@@ -17,35 +17,6 @@ ol.search_results li
 	border-bottom: 1px solid #ccc;
 }
 
-/* Styles for the core features screen.
-------------------------------------------------------- */
-.features
-{
-	padding: 0 1em !important;
-	overflow: auto;
-}
-.features_image
-{
-	float: left;
-	margin: 0 2em 0.5em 1em;
-}
-.features_switch
-{
-	margin: 0.2em 1em 1em 1em;
-	float: right;
-}
-.features h4
-{
-	padding: 1em 0 0.5em 0.5em;
-	margin: 0;
-	font-size: 1.1em;
-}
-.features p
-{
-	padding: 0 1em;
-	margin: 0;
-}
-
 /* Styles for the admin home screen bar.
 ------------------------------------------------------- */
 #admin_main_section
@@ -618,4 +589,12 @@ h3.grid_header
 #error_log td div.marginleft
 {
 	margin: 0 0 0 1ex;
+}
+
+/* Report */
+#report_items li {
+	padding: 0 0 10px 0;
+}
+#report_items li span {
+	margin: 0 0 0 1.5%;
 }

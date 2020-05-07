@@ -322,7 +322,7 @@ function template_show_month_grid($grid_name)
 		{
 			// If this is today, make it a different color and show a border.
 			echo '
-						<td style="height: ', $calendar_data['size'] == 'small' ? '20' : '100', 'px; padding: 2px;', $calendar_data['size'] == 'small' ? 'font-size: x-small;' : '', '" class="', $day['is_today'] ? 'calendar_today' : 'windowbg', ' days">';
+						<td style="height: ', $calendar_data['size'] == 'small' ? '20' : '100', 'px; padding: 2px;', $calendar_data['size'] == 'small' ? 'font-size: x-small;' : '', '" class="', $day['is_today'] ? 'calendar_today ' : '', 'days">';
 
 			// Skip it if it should be blank - it's not a day if it has no number.
 			if (!empty($day['day']))

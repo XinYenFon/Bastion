@@ -4,7 +4,7 @@
 /* Normal, standard links. */
 a:link, a:visited
 {
-	color: #f0f4f7;
+	color: #FFF;
 	text-decoration: none;
 }
 a:hover
@@ -14,10 +14,8 @@ a:hover
 }
 
 /* Links that open in a new window. */
-a.new_win:link, a.new_win:visited
-{
+a.new_win:link, a.new_win:visited {
 	color: #346;
-	text-decoration: none;
 }
 a.new_win:hover
 {
@@ -3220,6 +3218,7 @@ a.subject:hover, .member_link > a:hover, .catbg a:hover,
 }
 .nopad {
 	padding: 10px 0 0 0;
+	margin: 0 0 10px 0;
 }
 .collapsed {
 	opacity: 0.5;
@@ -3246,6 +3245,9 @@ a.subject:hover, .member_link > a:hover, .catbg a:hover,
 /* This looks bit cool ? */
 .quickbuttons .fa-fw {
 	vertical-align: top;
+}
+i {
+	margin: 0 5px 0 0;
 }
 
 /* On/Off Icons (User) */
@@ -3288,9 +3290,6 @@ a.subject:hover, .member_link > a:hover, .catbg a:hover,
 #content_section {
 	padding: 0 5%;
 }
-.abg {
-	background-image: url(../images/abg.jpg);
-}
 .new_button {
 	background: orange;
 	padding: 0 3px;
@@ -3326,6 +3325,9 @@ a.subject:hover, .member_link > a:hover, .catbg a:hover,
 .mailto {
 	background: grey;
 }
+.rss {
+	background: #ee802f;
+}
 /* H3 Flex */
 h3.catbg {
 	display: flex;
@@ -3338,26 +3340,58 @@ h3.catbg > * {
 h3.catbg > a[id^="c"]:empty {
 	display: none;
 }
-
+/* Features Flex */
+.features {
+	display: flex;
+	padding: 10px 5px 0 5px;
+}
+.features > i, .features > .features_switch {
+	flex: 1 5%;
+	align-self: center;
+}
+.features > .features_text {
+	flex: 1 90%;
+	align-self: center;
+}
+.f_on {
+	color: green;
+}
+.f_off {
+	color: red;
+}
 /* bytwo */
 .bytwo {
 	column-count: 2;
 }
 
-/* On/Off Icons (User) */
-.on, .off {
-	display: inline-block;
-	width: 14px;
-	height: 14px;
-	border-radius: 50%;
-	border: 1px solid transparent;
-	vertical-align: middle;
+/* Icon Sync -this... I should have done earlier...- */
+.fa-cd:before {
+	content: "\f133";
 }
-.on {
-	background: #89e75a;
-	border-color: #74d246;
+.fa-cp:before {
+	content: "\f2c1";
 }
-.off {
-	background: #a7a2a2;
-	border-color: #969292;
+.fa-k:before {
+	content: "\f6ad";
+}
+.fa-ml:before {
+	content: "\f46d";	
+}
+.fa-pm:before {
+	content: "\f577";
+}
+.fa-ps:before {
+	content: "\f155";
+}
+.fa-rg:before {
+	content: "\f71e";
+}
+.fa-w:before {
+	content: "\f071";	
+}
+.fa-sp:before {
+	content: "\f002";
+}
+.fa-gdpr:before {
+	content: "\f7a2";
 }

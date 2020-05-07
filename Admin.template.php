@@ -1341,7 +1341,7 @@ function template_core_features()
 			itemValueHandle.value = itemValueHandle.value == 1 ? 0 : 1;
 
 			// Change the image, alternative text and the title.
-			document.getElementById("switch_" + itemID).src = \'', $settings['images_url'], '/admin/switch_\' + (itemValueHandle.value == 1 ? \'on\' : \'off\') + \'.png\';
+			document.getElementById("switch_" + itemID).className = (itemValueHandle.value == 1 ? \'fas fa-check f_on fa-2x\' : \'fas fa-times f_off fa-2x\');
 			document.getElementById("switch_" + itemID).alt = itemValueHandle.value == 1 ? \'', $txt['core_settings_switch_off'], '\' : \'', $txt['core_settings_switch_on'], '\';
 			document.getElementById("switch_" + itemID).title = itemValueHandle.value == 1 ? \'', $txt['core_settings_switch_off'], '\' : \'', $txt['core_settings_switch_on'], '\';';
 
@@ -1381,20 +1381,20 @@ function template_core_features()
 	foreach ($context['features'] as $id => $feature)
 	{
 		echo '
-			<div class="windowbg">
-				<div class="content features">
-					<i class="fas fa-', $id, ' fa-2x fa-fw"></i>
-					<div class="features_switch" id="js_feature_', $id, '" style="display: none;">
-						<a href="', $scripturl, '?action=admin;area=featuresettings;sa=core;', $context['session_var'], '=', $context['session_id'], ';toggle=', $id, ';state=', $feature['enabled'] ? 0 : 1, '" onclick="return toggleItem(\'', $id, '\');">
-							<input type="hidden" name="feature_', $id, '" id="feature_', $id, '" value="', $feature['enabled'] ? 1 : 0, '"><i class="fa fa-', $feature['enabled'] ? 'check on' : 'times off', ' fa-2x fa-fw" id="switch_', $id, '" style="margin-top: 1.3em;" alt="', $txt['core_settings_switch_' . ($feature['enabled'] ? 'off' : 'on')], '" title="', $txt['core_settings_switch_' . ($feature['enabled'] ? 'off' : 'on')], '"></i>
-						</a>
-					</div>
+			<div class="windowbg features">
+				<i class="fas fa-', $id, ' fa-2x fa-fw"></i>
+				<div class="features_text">
 					<h4>', ($feature['enabled'] && $feature['url'] ? '<a href="' . $feature['url'] . '">' . $feature['title'] . '</a>' : $feature['title']), '</h4>
 					<p>', $feature['desc'], '</p>
-					<div id="plain_feature_', $id, '">
-						<label for="plain_feature_', $id, '_radio_on"><input type="radio" name="feature_plain_', $id, '" id="plain_feature_', $id, '_radio_on" value="1"', $feature['enabled'] ? ' checked="checked"' : '', ' class="input_radio">', $txt['core_settings_enabled'], '</label>
-						<label for="plain_feature_', $id, '_radio_off"><input type="radio" name="feature_plain_', $id, '" id="plain_feature_', $id, '_radio_off" value="0"', !$feature['enabled'] ? ' checked="checked"' : '', ' class="input_radio">', $txt['core_settings_disabled'], '</label>
-					</div>
+				</div>
+				<div class="features_switch" id="js_feature_', $id, '" style="display: none;">
+					<a href="', $scripturl, '?action=admin;area=featuresettings;sa=core;', $context['session_var'], '=', $context['session_id'], ';toggle=', $id, ';state=', $feature['enabled'] ? 0 : 1, '" onclick="return toggleItem(\'', $id, '\');">
+						<input type="hidden" name="feature_', $id, '" id="feature_', $id, '" value="', $feature['enabled'] ? 1 : 0, '"><i class="fas fa-', $feature['enabled'] ? 'check f_on' : 'times f_off', ' fa-2x" id="switch_', $id, '" alt="', $txt['core_settings_switch_' . ($feature['enabled'] ? 'off' : 'on')], '" title="', $txt['core_settings_switch_' . ($feature['enabled'] ? 'off' : 'on')], '"></i>
+					</a>
+				</div>
+				<div id="plain_feature_', $id, '">
+					<label for="plain_feature_', $id, '_radio_on"><input type="radio" name="feature_plain_', $id, '" id="plain_feature_', $id, '_radio_on" value="1"', $feature['enabled'] ? ' checked="checked"' : '', ' class="input_radio">', $txt['core_settings_enabled'], '</label>
+					<label for="plain_feature_', $id, '_radio_off"><input type="radio" name="feature_plain_', $id, '" id="plain_feature_', $id, '_radio_off" value="0"', !$feature['enabled'] ? ' checked="checked"' : '', ' class="input_radio">', $txt['core_settings_disabled'], '</label>
 				</div>
 			</div>';
 	}

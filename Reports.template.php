@@ -27,33 +27,32 @@ function template_report_type()
 			<div class="cat_bar">
 				<h3 class="catbg">', $txt['generate_reports_type'], '</h3>
 			</div>
-			<div class="windowbg">
-				<div class="content">
-					<dl class="generate_report">';
+			<div class="windowbg content">
+				<ul id="report_items" class="reset">';
 
 	// Go through each type of report they can run.
 	foreach ($context['report_types'] as $type)
 	{
 		echo '
-						<dt>
-							<input type="radio" id="rt_', $type['id'], '" name="rt" value="', $type['id'], '"', $type['is_first'] ? ' checked="checked"' : '', ' class="input_radio">
-							<strong><label for="rt_', $type['id'], '">', $type['title'], '</label></strong>
-						</dt>';
+					<li>
+						<input type="radio" id="rt_', $type['id'], '" name="rt" value="', $type['id'], '"', $type['is_first'] ? ' checked="checked"' : '', ' class="input_radio">
+						<strong><label for="rt_', $type['id'], '">', $type['title'], '</label></strong>';
 		if (isset($type['description']))
 			echo '
-						<dd>', $type['description'], '</dd>';
+						<br><span class="smalltext">', $type['description'], '</span>';
+
+		echo '
+					</li>';
 	}
 		echo '
-					</dl>
-					<div class="righttext">
-						<input type="submit" name="continue" value="', $txt['generate_reports_continue'], '" class="button_submit">
-						<input type="hidden" name="', $context['session_var'], '" value="', $context['session_id'], '">
-					</div>
+				</ul>
+				<div class="righttext">
+					<input type="submit" name="continue" value="', $txt['generate_reports_continue'], '" class="button_submit">
+					<input type="hidden" name="', $context['session_var'], '" value="', $context['session_id'], '">
 				</div>
 			</div>
 		</form>
-	</div>
-	<br class="clear">';
+	</div>';
 }
 
 // This is the standard template for showing reports in.
