@@ -411,7 +411,7 @@ function template_main()
 			sMonthLinkIdPrefix: \'m\',
 
 			reDayPattern: /tr_day_(\d+-\d+-\d+)/,
-			sDayRowClassname: \'windowbg2\',
+			sDayRowClassname: \'windowbg\',
 			sDayRowIdPrefix: \'tr_day_\',
 
 			aCollapsedYears: [';

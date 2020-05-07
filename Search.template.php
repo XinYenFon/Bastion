@@ -416,7 +416,10 @@ function template_results()
 		echo '
 		<div class="cat_bar">
 			<h3 class="catbg">
-				<span><i class="fas fa-search"></i> ', $txt['mlist_search_results'],' ',$context['search_params']['search'],'</span>
+				<span>
+					<i class="fas fa-search"></i>
+					', $txt['mlist_search_results'],' ',$context['search_params']['search'],'
+				</span>
 			</h3>
 		</div>
 		<div class="pagesection">
