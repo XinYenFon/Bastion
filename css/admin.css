@@ -77,14 +77,25 @@ ol.search_results li
 	margin: 0;
 	padding: 0;
 }
+#quick_tasks {
+	display: flex;
+	flex-flow: row wrap;
+}
 #quick_tasks li
 {
-	float: left;
+	display: flex;
 	list-style-type: none;
 	margin: 0;
 	padding: 0.5em 0;
 	width: 49.5%;
-	height: 4.5em;
+	height: 3em;
+}
+#quick_tasks li a {
+	align-self: center;
+	margin: 0 10px 0 0;
+}
+#quick_tasks li div {
+	align-self: center;
 }
 .quick_task
 {

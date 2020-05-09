@@ -3292,8 +3292,11 @@ i {
 }
 .new_button {
 	background: orange;
-	padding: 0 3px;
+	padding: 2px 4px;
 	border-radius: 3px;
+	color: #FFF;
+	font-weight: bold;
+	font-size: smaller;
 }
 /* Social Buttons -why not- */
 #social_evil_buttons {

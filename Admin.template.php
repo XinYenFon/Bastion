@@ -113,12 +113,17 @@ function template_admin()
 				<ul id="quick_tasks" class="flow_hidden">';
 
 	foreach ($context['quick_admin_tasks'] as $task)
+	{
+		$item_class = preg_split("/[_.]+/", $task['icon']);
 		echo '
-					<li>
-						', !empty($task['icon']) ? '<a href="' . $task['href'] . '"><i class="fas fa-' . $task['icon'] . ' fa-fw"></i></a>' : '', '
-						<h5>', $task['link'], '</h5>
-						<span class="task">', $task['description'],'</span>
-					</li>';
+		<li>
+			', !empty($task['icon']) ? '<a href="' . $task['href'] . '"><i class="fas fa-' . $item_class[0] . ' fa-2x fa-fw"></i></a>' : '', '
+			<div class="quick_text_container">
+				<h5>', $task['link'], '</h5>
+				<span class="task">', $task['description'],'</span>
+			</div>
+		</li>';
+	}
 
 	echo '
 				</ul>
