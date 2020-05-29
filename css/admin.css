@@ -609,3 +609,6 @@ h3.grid_header
 #report_items li span {
 	margin: 0 0 0 1.5%;
 }
+th i {
+	margin: 0;
+}

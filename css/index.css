@@ -702,6 +702,9 @@ div.cat_bar, tr.catbg
 div.cat_bar .catbg, .catbg a {
 	color: #f0f4f7;
 }
+.cat_bar + .windowbg {
+	margin: 0 0 10px 0;
+}
 
 /* rounded bars needs a different background here */
 #upshrinkHeaderIC p.pminfo
@@ -1357,7 +1360,7 @@ div.table_frame .table_list
 {
 	margin-bottom: 1em;
 }
-.lastpost img
+.lastpost i
 {
 	float: right;
 	padding: 4px;
@@ -3052,11 +3055,6 @@ span.hidelink
 
 /* Styles for the basic search section.
 ------------------------------------------------- */
-#searchform, #simple_search p
-{
-	padding: 0.5em;
-	margin: 0;
-}
 #simple_search, #simple_search p, #advanced_search
 {
 	text-align: center !important;
