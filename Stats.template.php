@@ -302,7 +302,9 @@ function template_main()
 		<div class="flow_hidden">
 			<div class="cat_bar">
 				<h3 class="catbg">
-					<i class="fas fa-history"></i> ', $txt['forum_history'], '
+					<span>
+						<i class="fas fa-history"></i> ', $txt['forum_history'], '
+					</span>
 				</h3>
 			</div>';
 

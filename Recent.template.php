@@ -18,7 +18,7 @@ function template_main()
 	<div id="recent" class="main_section">
 		<div class="cat_bar">
 			<h3 class="catbg">
-				<img src="', $settings['images_url'], '/post/xx.gif" alt="" class="icon">',$txt['recent_posts'],'
+				<span><img src="', $settings['images_url'], '/post/xx.gif" alt="" class="icon">',$txt['recent_posts'],'</span>
 			</h3>
 		</div>
 		<div class="pagesection">

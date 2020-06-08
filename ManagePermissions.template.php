@@ -95,7 +95,9 @@ function template_permission_index()
 		echo '
 			<div class="cat_bar">
 				<h3 class="catbg">
-					<img src="', $settings['images_url'], '/', empty($context['show_advanced_options']) ? 'selected' : 'sort_down', '.gif" id="permissions_panel_toggle" alt="*"> ', $txt['permissions_advanced_options'], '
+					<span>
+						<img src="', $settings['images_url'], '/', empty($context['show_advanced_options']) ? 'selected' : 'sort_down', '.gif" id="permissions_panel_toggle" alt="*"> ', $txt['permissions_advanced_options'], '
+					</span>
 				</h3>
 			</div>
 			<div id="permissions_panel_advanced" class="windowbg">

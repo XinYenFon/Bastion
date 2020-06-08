@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <theme-info xmlns="http://www.simplemachines.org/xml/theme-info" xmlns:smf="http://www.simplemachines.org/">
 	<!-- For the id, always use something unique - put your name, a colon, and then the package name. -->
-	<id>smf:Bastion</id>
-	<version>1.0.4</version>
+	<id>xyf:Bastion</id>
+	<version>1.0.5</version>
 	<!-- Theme name, used purely for aesthetics. -->
 	<name>Bastion</name>
 	<!-- Author: your email address or contact information. The name attribute is optional. -->

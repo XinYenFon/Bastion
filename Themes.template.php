@@ -431,7 +431,10 @@ function template_set_settings()
 		echo '
 			<div class="cat_bar">
 				<h3 class="catbg">
-					<img src="', $settings['images_url'], '/icons/config_sm.gif" alt="" class="icon"> ', $txt['theme_edit'], '
+					<span>
+						<i class="fas fa-tools"></i>
+						', $txt['theme_edit'], '
+					</span>
 				</h3>
 			</div>
 			<div class="windowbg">
@@ -450,7 +453,10 @@ function template_set_settings()
 	echo '
 			<div class="cat_bar">
 				<h3 class="catbg">
-					<img src="', $settings['images_url'], '/icons/config_sm.gif" alt="" class="icon"> ', $txt['theme_url_config'], '
+					<span>
+						<i class="fas fa-tools"></i>
+						', $txt['theme_url_config'], '
+					</span>
 				</h3>
 			</div>
 			<div class="windowbg">
@@ -490,7 +496,10 @@ function template_set_settings()
 		echo '
 			<div class="cat_bar">
 				<h3 class="catbg">
-					<img src="', $settings['images_url'], '/icons/config_sm.gif" alt="" align="top"> ', $txt['theme_variants'], '
+					<span>
+						<i class="fas fa-tools"></i>
+						', $txt['theme_variants'], '
+					</span>
 				</h3>
 			</div>
 			<div class="windowbg">
@@ -525,7 +534,10 @@ function template_set_settings()
 	echo '
 			<div class="cat_bar">
 				<h3 class="catbg">
-					<img src="', $settings['images_url'], '/icons/config_sm.gif" alt="" class="icon"> ', $txt['theme_options'], '
+					<span>	
+						<i class="fas fa-tools"></i>
+						', $txt['theme_options'], '
+					</span>
 				</h3>
 			</div>
 			<div class="windowbg">

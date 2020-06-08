@@ -20,7 +20,7 @@ function template_search_members()
 			<div class="cat_bar">
 				<h3 class="catbg">
 					', $txt['search_for'], '
-					<span class="smalltext floatright">', $txt['wild_cards_allowed'], '</span>
+					<span class="smalltext righttext">', $txt['wild_cards_allowed'], '</span>
 				</h3>
 			</div>
 			<input type="hidden" name="sa" value="query">

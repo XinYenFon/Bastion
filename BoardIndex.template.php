@@ -29,22 +29,25 @@ function template_main()
 	<div id="newsfader">
 		<div class="cat_bar">
 			<h3 class="catbg">
-				<img id="newsupshrink" src="', $settings['images_url'], '/collapse.gif" alt="*" title="', $txt['upshrink_description'], '" align="bottom" style="display: none;">
 				', $txt['news'], '
+				<span class="righttext">
+					<i id="newsupshrink" class="fas toggle-down" style="display: none;"></i>
+				</span>
 			</h3>
 		</div>
-		<ul class="reset" id="smfFadeScroller"', empty($options['collapse_news_fader']) ? '' : ' style="display: none;"', '>';
+		<div class="windowbg">
+			<ul class="reset" id="smfFadeScroller"', empty($options['collapse_news_fader']) ? '' : ' style="display: none;"', '>';
 
 			foreach ($context['news_lines'] as $news)
 				echo '
-			<li>', $news, '</li>';
+				<li>', $news, '</li>';
 
 	echo '
-		</ul>
+			</ul>
+		</div>
 	</div>
 	<script type="text/javascript" src="', $settings['default_theme_url'], '/scripts/fader.js"></script>
 	<script type="text/javascript"><!-- // --><![CDATA[
-
 		// Create a news fader object.
 		var oNewsFader = new smf_NewsFader({
 			sSelf: \'oNewsFader\',
@@ -306,7 +309,7 @@ function template_info_center()
 					', $txt['recent_posts'], '
 				</h4>
 			</div>
-			<div class="hslice" id="recent_posts_content">
+			<div class="hslice windowbg" id="recent_posts_content">
 				<div class="entry-title" style="display: none;">', $context['forum_name_html_safe'], ' - ', $txt['recent_posts'], '</div>
 				<div class="entry-content" style="display: none;">
 					<a rel="feedurl" href="', $scripturl, '?action=.xml;type=webslice">', $txt['subscribe_webslice'], '</a>

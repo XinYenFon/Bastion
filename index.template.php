@@ -474,7 +474,7 @@ function template_button_strip($button_strip, $direction = 'top', $strip_options
 			</ul>
 		</div>';
 }
-function template_evil_social_share () {
+function template_evil_social_share() {
 	// We have to be in boardIndex, messageIndex or Topic... otherwise no!
 	global $context, $modSettings, $txt, $scripturl, $board, $topic;
 	if (empty($_REQUEST['action'])) {
@@ -489,4 +489,5 @@ function template_evil_social_share () {
 		</div>';
 	}
 }
+
 ?>

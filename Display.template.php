@@ -521,15 +521,6 @@ function template_main()
 								&#171; <em>', $txt['last_edit'], ': ', $message['modified']['time'], ' ', $txt['by'], ' ', $message['modified']['name'], '</em> &#187;';
 
 		echo '
-							</div>
-							<div class="smalltext reportlinks">';
-
-		// Can we issue a warning because of this post?  Remember, we can't give guests warnings.
-		if ($context['can_issue_warning'] && !$message['is_message_author'] && !$message['member']['is_guest'])
-			echo '
-								<a href="', $scripturl, '?action=profile;area=issuewarning;u=', $message['member']['id'], ';msg=', $message['id'], '"><img src="', $settings['images_url'], '/warn.gif" alt="', $txt['issue_warning_post'], '" title="', $txt['issue_warning_post'], '"></a>';
-
-		echo '
 							</div>';
 
 		// Are there any custom profile fields for above the signature?
@@ -594,6 +585,11 @@ function template_main()
 		if ($message['can_remove'])
 			echo '
 									<li class="remove_button"><a href="', $scripturl, '?action=deletemsg;topic=', $context['current_topic'], '.', $context['start'], ';msg=', $message['id'], ';', $context['session_var'], '=', $context['session_id'], '" onclick="return confirm(\'', $txt['remove_message'], '?\');"><i class="fas fa-fw fa-trash-alt"></i> ', $txt['remove'], '</a></li>';
+
+		// Can we issue a warning because of this post?  Remember, we can't give guests warnings.
+		if ($context['can_issue_warning'] && !$message['is_message_author'] && !$message['member']['is_guest'])
+			echo '
+									<li><a href="', $scripturl, '?action=profile;area=issuewarning;u=', $message['member']['id'], ';msg=', $message['id'], '"><i class="fas fa-fw fa-exclamation"></i> ', $txt['issue_warning_post'], '</a></li>';
 
 		// Maybe they want to report this post to the moderator(s)?
 		if ($context['can_report_moderator'])

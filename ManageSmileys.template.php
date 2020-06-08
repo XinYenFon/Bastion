@@ -83,7 +83,7 @@ function template_modifyset()
 		<form action="', $scripturl, '?action=admin;area=smileys;sa=editsets" method="post" accept-charset="', $context['character_set'], '">
 			<div class="cat_bar">
 				<h3 class="catbg">
-				', $context['current_set']['is_new'] ? $txt['smiley_set_new'] : $txt['smiley_set_modify_existing'], '
+					', $context['current_set']['is_new'] ? $txt['smiley_set_new'] : $txt['smiley_set_modify_existing'], '
 				</h3>
 			</div>';
 

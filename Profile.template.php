@@ -867,7 +867,7 @@ function template_showPermissions()
 				<form action="' . $scripturl . '?action=profile;u=', $context['id_member'], ';area=permissions#board_permissions" method="post" accept-charset="', $context['character_set'], '">
 					<div class="cat_bar">
 						<h3 class="catbg">
-							<a id="board_permissions"></a>', $txt['showPermissions_select'], ':
+							<span><a id="board_permissions"></a>', $txt['showPermissions_select'], ':</span>
 							<select name="board" onchange="if (this.options[this.selectedIndex].value) this.form.submit();">
 								<option value="0"', $context['board'] == 0 ? ' selected="selected"' : '', '>', $txt['showPermissions_global'], '&nbsp;</option>';
 				if (!empty($context['boards']))
@@ -2841,8 +2841,10 @@ function template_authentication_method()
 		<form action="', $scripturl, '?action=profile;area=authentication;save" method="post" accept-charset="', $context['character_set'], '" name="creator" id="creator" enctype="multipart/form-data">
 			<div class="cat_bar">
 				<h3 class="catbg">
-					<i class="fas fa-user"></i>
-					', $txt['authentication'], '
+					<span>
+						<i class="fas fa-user"></i>
+						', $txt['authentication'], '
+					</span>
 				</h3>
 			</div>
 			<p class="windowbg description">', $txt['change_authentication'], '</p>
