@@ -432,13 +432,22 @@ tr.catbg th a:link, tr.catbg th a:visited, tr.catbg2 td a:link, tr.catbg2 td a:v
 }
 
 /* Alternating backgrounds for posts, and several other sections of the forum. */
-.windowbg:nth-child(odd), #preview_body, .lockedbg
+.windowbg:nth-child(odd), #preview_body
 {
 	background-color: #00000055;
 }
-.windowbg:nth-child(even), .windowbg2, .windowbg3, .lockedbg2
+.windowbg:nth-child(odd) + tr[id$="_children"] {
+	background-color: #00000033;
+}
+.windowbg:nth-child(even), .windowbg2, .windowbg3
 {
 	background-color: #00000033;
+}
+.windowbg:nth-child(even) + tr[id$="_children"] {
+	background-color: #00000055;
+}
+.children.windowbg {
+	background-color: transparent;
 }
 
 /* the page navigation area */
@@ -481,9 +490,9 @@ div.pagesection div.floatright input
 }
 
 /* Sticky topics get a different background */
-.stickybg, .stickybg2
+.stickybg, .stickybg2, .lockedbg, .lockedbg2
 {
-	background: #461919;
+	background: #00000075;
 }
 
 /* Posts and personal messages displayed throughout the forum. */
@@ -1335,10 +1344,6 @@ div.table_frame .table_list
 {
 	border-collapse: collapse;
 	margin: 2px 0;
-}
-.table_frame .table_list td.icon, .table_frame .table_list td.info, .table_frame .table_list td.stats
-{
-	border-right: 2px solid white;
 }
 #messageindex
 {

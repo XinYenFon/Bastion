@@ -145,13 +145,13 @@ function template_main()
 			{
 				echo '
 				<tr id="board_', $board['id'], '" class="windowbg">
-					<td class="icon"', !empty($board['children']) ? ' rowspan="2"' : '', '>
+					<td class="icon">
 						<a href="', ($board['is_redirect'] || $context['user']['is_guest'] ? $board['href'] : $scripturl . '?action=unread;board=' . $board['id'] . '.0;children'), '">';
 
 				// If the board or children is new, show an indicator.
 				if ($board['new'] || $board['children_new'])
 					echo '
-							<i class="fa fa-3x fa-envelope', $board['children_new'] ? '-o' : '','"></i>';
+							<i class="fa fa-3x fa-envelope', $board['children_new'] ? '-open-text' : '','"></i>';
 				// Is it a redirection board?
 				elseif ($board['is_redirect'])
 					echo '
@@ -226,7 +226,7 @@ function template_main()
 					}
 					echo '
 					<tr id="board_', $board['id'], '_children">
-						<td colspan="3" class="children windowbg">
+						<td colspan="4" class="children windowbg">
 							<strong>', $txt['parent_boards'], '</strong>: ', implode(', ', $children), '
 						</td>
 					</tr>';
